@@ -17,6 +17,7 @@ alias se="sudoedit"
 alias ssh='TERM=xterm-256color ssh'
 alias ya="yadm"
 alias c="cd"
+alias z="cd"
 alias l="eza --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions -h"
 
 # Functions
