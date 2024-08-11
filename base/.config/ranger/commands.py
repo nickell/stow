@@ -141,14 +141,14 @@ class fzf_select(Command):
         if fd is not None:
             hidden = ('--hidden' if self.fm.settings.show_hidden else '')
             exclude = "--no-ignore-vcs --exclude '.git' --exclude '*.py[co]' --exclude '__pycache__'"
-            only_directories = ('--type directory' if self.quantifier else '')
+            only_directories = '--type directory'
             fzf_default_command = '{} --follow {} {} {} --color=always'.format(
                 fd, hidden, exclude, only_directories
             )
         else:
             hidden = ('-false' if self.fm.settings.show_hidden else r"-path '*/\.*' -prune")
             exclude = r"\( -name '\.git' -o -iname '\.*py[co]' -o -fstype 'dev' -o -fstype 'proc' \) -prune"
-            only_directories = ('-type d' if self.quantifier else '')
+            only_directories = '-type d'
             fzf_default_command = 'find -L . -mindepth 1 {} -o {} -o {} -print | cut -b3-'.format(
                 hidden, exclude, only_directories
             )

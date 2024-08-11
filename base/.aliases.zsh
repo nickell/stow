@@ -1,6 +1,8 @@
 # vim: set ft=sh:
 
 # alias c="clear"
+alias ..="cd ../"
+alias ~="cd ~/"
 alias ctl="systemctl --user"
 alias e="${(z)VISUAL:-${(z)EDITOR}}"
 alias g="git"
@@ -16,8 +18,7 @@ alias sctl="sudo systemctl"
 alias se="sudoedit"
 alias ssh='TERM=xterm-256color ssh'
 alias ya="yadm"
-alias c="cd"
-alias z="cd"
+alias z="__zoxide_zi"
 alias l="eza --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions -h"
 
 # Functions
