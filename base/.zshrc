@@ -64,11 +64,12 @@ alias c='clear'
 
 # Shell integrations
 eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+eval "$(zoxide init zsh)"
 #  }}}
 
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
+export RANGER_DEVICONS_SEPARATOR="  "
 
 source $HOME/.aliases.zsh
 

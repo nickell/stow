@@ -11,7 +11,7 @@ alias ll="ls -aFhl"
 # alias l="ls"
 alias m="make"
 alias nr="npm run"
-alias r="ranger"
+alias r=". ranger"
 alias sctl="sudo systemctl"
 alias se="sudoedit"
 alias ssh='TERM=xterm-256color ssh'
