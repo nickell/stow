@@ -18,4 +18,5 @@ return {
   'christoomey/vim-sort-motion',
   { 'numToStr/Navigator.nvim', config = true },
   { 'ellisonleao/glow.nvim', config = true, cmd = 'Glow' },
+  { 'echasnovski/mini.nvim', version = '*' },
 }
