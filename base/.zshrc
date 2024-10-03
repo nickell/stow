@@ -64,6 +64,8 @@ alias c='clear'
 
 # Shell integrations
 eval "$(fzf --zsh)"
+
+export _ZO_FZF_OPTS="--select-1"
 eval "$(zoxide init zsh)"
 #  }}}
 
