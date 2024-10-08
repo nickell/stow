@@ -58,7 +58,7 @@ return {
         'pyright',
         'lua_ls',
         'tailwindcss',
-        'tsserver',
+        'ts_ls',
         'vimls',
         'yamlls',
       },
@@ -72,10 +72,10 @@ return {
           capabilities = capabilities,
         }
       end,
-      ['tsserver'] = function()
+      ['ts_ls'] = function()
         local nvim_lsp = require 'lspconfig'
 
-        lspconfig.tsserver.setup {
+        lspconfig.ts_ls.setup {
           capabilities = capabilities,
           single_file_support = false,
           root_dir = nvim_lsp.util.root_pattern 'package.json',
