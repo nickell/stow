@@ -73,6 +73,8 @@ return {
     keys = {
       { '<leader>dm', ':DiffviewOpen origin/HEAD...HEAD<CR>', { desc = 'Diffview main' } },
       { '<leader>do', ':DiffviewOpen<CR>', { desc = 'Diffview' } },
+      { '<leader>df', ':DiffviewFileHistory %<CR>', { desc = 'DiffviewFileHistory' } },
+      { '<leader>dl', ':DiffviewFileHistory<CR>', { desc = 'DiffviewFileHistory all' } },
       { '<leader>dc', ':DiffviewClose<CR>', { desc = 'Diffview close' } },
     },
     config = function()
