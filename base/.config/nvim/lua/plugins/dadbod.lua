@@ -25,6 +25,8 @@ return {
       { 'pg_catalog', 'pg_toast_temp.*', 'crdb_internal', 'information_schema', 'pg_extension' }
 
     vim.g.db_ui_execute_on_save = 0
+
+    vim.g.db_ui_save_location = '/home/chad/Documents/Drive - Personal/Syncs/DBUI'
   end,
   config = function()
     -- require('vim-dadbod-ui').setup()
