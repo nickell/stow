@@ -21,7 +21,7 @@ return {
       jsonc = { 'prettierd' },
       typescriptreact = { 'prettierd' },
       typescript = { 'prettierd' },
-      sql = { 'prettierd' },
+      sql = { 'prettier' },
     },
     -- Set up format-on-save
     format_on_save = { timeout_ms = 500, lsp_fallback = true },
