@@ -16,6 +16,7 @@ return {
   --   end,
   -- },
   'christoomey/vim-sort-motion',
+  'gianarb/vim-flux',
   { 'numToStr/Navigator.nvim', config = true },
   { 'ellisonleao/glow.nvim', config = true, cmd = 'Glow' },
   { 'echasnovski/mini.nvim', version = '*' },

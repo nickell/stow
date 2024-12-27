@@ -78,6 +78,7 @@ source $HOME/.aliases.zsh
 #  {{{ Path
 path+=$HOME/.bin
 path+=$HOME/.local/bin
+path+=$HOME/.cargo/bin
 export PATH
 #  }}}
 
