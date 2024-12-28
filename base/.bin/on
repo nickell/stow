@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+cd /home/chad/Documents/notes/Notes
+
+if [ $# -eq 0 ]
+then
+  fname="$(date +%Y-%m-%d)"
+else
+  fname="$@"
+fi
+
+nvim "Inbox/$fname.md"

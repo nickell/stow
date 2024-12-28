@@ -7,17 +7,7 @@ return {
     event = 'VeryLazy',
     opts = {},
   },
-  -- {
-  --   'navarasu/onedark.nvim',
-  --   config = function()
-  --     local onedark = require 'onedark'
-  --     onedark.setup { style = 'deep' }
-  --     onedark.load()
-  --   end,
-  -- },
   'christoomey/vim-sort-motion',
   'gianarb/vim-flux',
   { 'numToStr/Navigator.nvim', config = true },
-  { 'ellisonleao/glow.nvim', config = true, cmd = 'Glow' },
-  { 'echasnovski/mini.nvim', version = '*' },
 }

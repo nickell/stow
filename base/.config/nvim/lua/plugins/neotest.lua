@@ -20,11 +20,11 @@ return {
       function() require('neotest').summary.toggle() end,
     },
     {
-      '<leader>o',
+      '<leader>tt',
       function() require('neotest').output.open { auto_close = true, quiet = true } end,
     },
     {
-      '<leader>r',
+      '<leader>tr',
       function() require('neotest').run.run() end,
     },
     {

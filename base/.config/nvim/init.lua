@@ -56,6 +56,8 @@ o.backupdir = vim.fn.expand '~/.config/nvim/backup/'
 o.directory = vim.fn.expand '~/.config/nvim/swap/'
 o.undodir = vim.fn.expand '~/.config/nvim/undo/'
 
+o.conceallevel = 2
+
 -- Make DiffView look cool
 o.fillchars:append { diff = '╱' }
 -- o.fillchars = {
@@ -103,6 +105,7 @@ nmap('<leader>se', '<C-w>=', { desc = 'Make splits equal size' }) -- make split 
 nmap('<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' }) -- close current split window
 nmap('<Leader>w', ':write<CR>')
 nmap('<Leader>x', ':bd<CR>')
+nmap('<Leader>X', "<cmd>call delete(expand('%')) | bdelete!<CR>")
 -- nmap('<leader><leader>s', '<cmd>source ~/.config/nvim/lua/my_luasnip.lua<CR>')
 nmap('L', 'zO')
 nmap('H', 'zC')
