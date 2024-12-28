@@ -154,7 +154,7 @@ bindsym $mod+b [con_mark="ranger"] scratchpad show
 bindsym $mod+o [con_mark="obsidian"] scratchpad show
 bindsym $mod+bracketright mode $shortcut_mode
 bindsym $mod+c exec $browser
-bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-2/launcher.sh
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-3/launcher.sh
 bindsym $mod+i exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme $HOME/.config/rofi/launchers/type-2/style-1.rasi
 bindsym $mod+e workspace 
 bindsym $mod+f fullscreen toggle
