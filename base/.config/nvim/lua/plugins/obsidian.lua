@@ -1,3 +1,47 @@
+-- Custom command to move the current file to a hardcoded directory
+vim.api.nvim_create_user_command('MoveNoteToZet', function()
+  -- Define the hardcoded directory (replace with your desired path)
+  local hardcoded_path = '/home/chad/Documents/notes/Notes/zet'
+
+  -- Get the current buffer and its file path
+  local current_buffer = vim.api.nvim_get_current_buf()
+  local source_file_path = vim.api.nvim_buf_get_name(current_buffer)
+
+  -- Check if the buffer is associated with a file
+  if source_file_path == '' then
+    print 'Current buffer is not associated with a file.'
+    return
+  end
+
+  -- Check if the buffer is writable
+  local buftype = vim.api.nvim_buf_get_option(current_buffer, 'buftype')
+  if buftype ~= '' then
+    print 'Current buffer is not a normal file.'
+    return
+  end
+
+  -- Save the file to avoid "No write since last change" error
+  vim.cmd 'silent! write'
+
+  -- Extract the file name from the source file path
+  local file_name = vim.fn.fnamemodify(source_file_path, ':t')
+
+  -- Construct the new file path
+  local new_file_path = hardcoded_path .. '/' .. file_name
+
+  -- Move the file using os.rename
+  local success = os.rename(source_file_path, new_file_path)
+  if success then
+    print('Moved ' .. source_file_path .. ' to ' .. new_file_path)
+    -- Update the buffer with the new file path
+    vim.api.nvim_buf_set_name(current_buffer, new_file_path)
+    -- Reload the buffer
+    vim.cmd 'edit'
+  else
+    print 'Failed to move the file.'
+  end
+end, {})
+
 return {
   'epwalsh/obsidian.nvim',
   version = '*', -- recommended, use latest release instead of latest commit
@@ -8,13 +52,13 @@ return {
   },
   dependencies = { 'nvim-lua/plenary.nvim' },
   keys = {
-    { '<c-cr>', '<cmd>ObsidianToggleCheckbox<cr>', mode = { 'n' }, 'Obsidian toggle checkbox' },
-    { '<c-cr>', '<cmd>ObsidianToggleCheckbox<cr><esc>A', mode = { 'i' } },
-    { '<leader>on', '<cmd>exe \'e Inbox/\'.strftime("%Y-%m-%d.md")<cr>' },
-    { '<leader>oam', '<cmd>ObsidianTemplate Para Meeting Template.md<cr>' },
-    { '<leader>orm', '<cmd>ObsidianTemplate Pro Meeting Template.md<cr>' },
-    { '<leader>oz', '<cmd>ObsidianTemplate Pro Meeting Template.md<cr>' },
-    { '<leader>ob', '<cmd>ObsidianBacklinks<cr>' },
+    { '<c-cr>', '<cmd>ObsidianToggleCheckbox<cr>', mode = { 'n' }, desc = 'Obsidian - Toggle Checkbox' },
+    { '<c-cr>', '<cmd>ObsidianToggleCheckbox<cr><esc>A', mode = { 'i' }, desc = 'Obsidian - Toggle Checkbox' },
+    { '<leader>on', '<cmd>exe \'e Inbox/\'.strftime("%Y-%m-%d.md")<cr>', desc = 'Obsidian - New Note (Today)' },
+    { '<leader>oam', '<cmd>ObsidianTemplate Para Meeting Template.md<cr>', desc = 'Obsidian - Para Meeting Template' },
+    { '<leader>orm', '<cmd>ObsidianTemplate Pro Meeting Template.md<cr>', desc = 'Obsidian - Pro Meeting Template' },
+    { '<leader>oz', '<cmd>MoveNoteToZet<cr>', desc = 'Obsidian - Move note to zet folder' },
+    { '<leader>ob', '<cmd>ObsidianBacklinks<cr>', desc = 'Obsidian - Backlinks' },
   },
   opts = {
     templates = {
