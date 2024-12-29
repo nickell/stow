@@ -8,7 +8,7 @@ return {
   },
   dependencies = { 'nvim-lua/plenary.nvim' },
   keys = {
-    { '<c-cr>', '<cmd>ObsidianToggleCheckbox<cr>', mode = { 'n' } },
+    { '<c-cr>', '<cmd>ObsidianToggleCheckbox<cr>', mode = { 'n' }, 'Obsidian toggle checkbox' },
     { '<c-cr>', '<cmd>ObsidianToggleCheckbox<cr><esc>A', mode = { 'i' } },
     { '<leader>on', '<cmd>exe \'e Inbox/\'.strftime("%Y-%m-%d.md")<cr>' },
     { '<leader>oam', '<cmd>ObsidianTemplate Para Meeting Template.md<cr>' },
