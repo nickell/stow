@@ -61,7 +61,6 @@ return {
         'ts_ls',
         'vimls',
         'yamlls',
-        'flux_lsp',
       },
       automatic_installation = true,
     }
