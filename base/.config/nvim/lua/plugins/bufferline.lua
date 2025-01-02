@@ -8,7 +8,11 @@ local function get_file_representation(path)
   else
     -- If not, return the first letter of the directory + the basename.
     local directory = relative_path:match '^([^/]+)/'
-    return string.sub(directory, 1, 1) .. '/' .. basename
+    if directory == nil or directory == '' then
+      return basename
+    else
+      return string.sub(directory, 1, 1) .. '/' .. basename
+    end
   end
 end
 
