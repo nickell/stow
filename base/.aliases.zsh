@@ -20,7 +20,8 @@ alias ssh='TERM=xterm-256color ssh'
 alias ya="yadm"
 alias z="__zoxide_zi"
 alias l="eza --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions -h"
-alias o="cd /home/chad/Documents/notes/Notes"
+alias o="nvim -c \"cd /home/chad/Documents/notes/Notes\""
+alias d="nvim -c \"cd /home/chad/.dotfiles\""
 
 # Functions
 logs () {
