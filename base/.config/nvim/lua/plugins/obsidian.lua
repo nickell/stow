@@ -71,6 +71,11 @@ return {
         path = '/home/chad/Documents/notes/Notes',
       },
     },
+    follow_url_func = function(url)
+      -- Open the URL in the default web browser.
+      vim.ui.open(url)
+    end,
+
     -- disable_frontmatter = true,
     note_frontmatter_func = function(note)
       -- Add the title of the note as an alias.
