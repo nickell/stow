@@ -22,6 +22,7 @@ alias z="__zoxide_zi"
 alias l="eza --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions -h"
 alias o="nvim -c \"cd /home/chad/Documents/notes/Notes\""
 alias d="nvim -c \"cd /home/chad/.dotfiles\""
+alias db="nvim -c DBUI"
 
 # Functions
 logs () {
