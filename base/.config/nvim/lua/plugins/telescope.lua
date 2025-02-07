@@ -128,6 +128,7 @@ return {
       { '<leader>fm', '<cmd>MoveFileToDirectory<cr>' },
       -- { '<leader>fb', function() require('neogit').action('branch', 'checkout_local_branch')() end },
       { '<leader>fb', '<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>' },
+      { '<leader>fc', '<cmd>Telescope find_files<cr>', { desc = 'Fuzzy find files' } },
     },
     config = function()
       local telescope = require 'telescope'
@@ -165,7 +166,7 @@ return {
         pickers = {
           find_files = {
             hidden = true,
-            find_command = { 'rg', '--files', '--hidden', '--glob', '!**/.git/*' },
+            find_command = { 'rg', '--files', '--hidden', '--glob', '!**/.git/*', '--sortr=modified' },
             theme = 'dropdown',
           },
           live_grep = {
@@ -205,7 +206,6 @@ return {
     dependencies = { 'nvim-telescope/telescope.nvim' },
     keys = {
       { '<leader>f', '<CMD>Telescope commander<CR>', mode = 'n' },
-      { '<leader>fc', '<CMD>Telescope commander<CR>', mode = 'n' },
     },
     config = function()
       require('commander').setup {
