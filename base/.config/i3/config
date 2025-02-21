@@ -106,6 +106,7 @@ for_window [class="Xfce4-power-manager-settings"] floating enable
 for_window [class="kitty" title="Scratchpad"] border pixel 1, mark "kitty" move scratchpad
 for_window [class="kitty" title="Ranger"] border pixel 1, mark "ranger", move scratchpad
 for_window [class="obsidian"] border pixel 1, mark "obsidian", move scratchpad
+for_window [class="dolphin"] border pixel 1, mark "dolphin", move scratchpad
 for_window [class="Variety"] floating enable
 for_window [class="lightdm-gtk-greeter-settings"] floating enable
 for_window [class="font-manager"] floating enable
@@ -152,6 +153,7 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+a focus parent
 bindsym $mod+b [con_mark="ranger"] scratchpad show
 bindsym $mod+o [con_mark="obsidian"] scratchpad show
+bindsym $mod+n [con_mark="dolphin"] scratchpad show
 bindsym $mod+bracketright mode $shortcut_mode
 bindsym $mod+c exec $browser
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-3/launcher.sh
@@ -455,6 +457,7 @@ exec --no-startup-id kitty --title="Scratchpad"
 exec --no-startup-id kitty --title="Ranger" ranger
 exec --no-startup-id /usr/bin/obsidian
 exec --no-startup-id /usr/bin/insync start
+exec --no-startup-id /usr/bin/dolphin
 # }}}
 
 include ~/.config/i3/`hostname`.conf
