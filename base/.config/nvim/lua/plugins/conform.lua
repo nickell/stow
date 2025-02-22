@@ -16,11 +16,11 @@ return {
     formatters_by_ft = {
       lua = { 'stylua' },
       python = { 'isort', 'black' },
-      javascript = { 'prettierd' },
-      json = { 'prettierd' },
-      jsonc = { 'prettierd' },
-      typescriptreact = { 'prettierd' },
-      typescript = { 'prettierd' },
+      javascript = { 'prettier', 'prettierd' },
+      json = { 'prettier', 'prettierd' },
+      jsonc = { 'prettier', 'prettierd' },
+      typescriptreact = { 'prettier', 'prettierd' },
+      typescript = { 'prettier', 'prettierd' },
       sql = { 'prettier' },
     },
     -- Set up format-on-save
