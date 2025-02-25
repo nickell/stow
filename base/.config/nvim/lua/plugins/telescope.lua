@@ -112,23 +112,23 @@ return {
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
     keys = {
-      { '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = 'Fuzzy find files' } },
+      -- { '<leader>ff', '<cmd>Telescope find_files<cr>', { desc = 'Fuzzy find files' } },
       { '<A-l>', '<cmd>Telescope<cr>' },
       { '<A-;>', '<cmd>Telescope resume<cr>' },
-      { '<leader>fg', '<cmd>Telescope live_grep<cr>' },
-      {
-        '<leader>fs',
-        function() require('telescope.builtin').lsp_document_symbols { ignore_symbols = 'property' } end,
-      },
-      {
-        '<leader>fw',
-        function() require('telescope.builtin').live_grep { default_text = vim.fn.expand '<cword>' } end,
-      },
-      { '<leader>fr', '<cmd>Telescope lsp_references<cr>' },
+      -- { '<leader>fg', '<cmd>Telescope live_grep<cr>' },
+      -- {
+      --   '<leader>fs',
+      --   function() require('telescope.builtin').lsp_document_symbols { ignore_symbols = 'property' } end,
+      -- },
+      -- {
+      --   '<leader>fw',
+      --   function() require('telescope.builtin').live_grep { default_text = vim.fn.expand '<cword>' } end,
+      -- },
+      -- { '<leader>fr', '<cmd>Telescope lsp_references<cr>' },
       { '<leader>fm', '<cmd>MoveFileToDirectory<cr>' },
       -- { '<leader>fb', function() require('neogit').action('branch', 'checkout_local_branch')() end },
-      { '<leader>fb', '<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>' },
-      { '<leader>fc', '<cmd>Telescope find_files<cr>', { desc = 'Fuzzy find files' } },
+      -- { '<leader>fb', '<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>' },
+      -- { '<leader>fc', '<cmd>Telescope find_files<cr>', { desc = 'Fuzzy find files' } },
     },
     config = function()
       local telescope = require 'telescope'
