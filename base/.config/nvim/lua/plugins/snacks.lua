@@ -7,7 +7,26 @@ return {
     opts = {
       animate = { enabled = true, duration = 20 },
       bufdelete = { enabled = true },
-      dashboard = { enabled = true },
+      dashboard = {
+        enabled = true,
+        preset = {
+          keys = {
+            { icon = ' ', key = 'f', desc = 'Find File', action = ':lua Snacks.picker.smart()' },
+            { icon = ' ', key = 'n', desc = 'New File', action = ':ene' },
+            { icon = ' ', key = 'g', desc = 'Find Text', action = ':lua Snacks.picker.grep()' },
+            { icon = ' ', key = 'r', desc = 'Recent Files', action = ':lua Snacks.picker.recent()' },
+            {
+              icon = ' ',
+              key = 'c',
+              desc = 'Config',
+              action = ":lua Snacks.picker.smart({cwd = vim.fn.stdpath('config')})",
+            },
+            { icon = ' ', key = 's', desc = 'Restore Session', section = 'session' },
+            { icon = '󰒲 ', key = 'l', desc = 'Lazy', action = ':Lazy', enabled = package.loaded.lazy ~= nil },
+            { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
+          },
+        },
+      },
       debug = { enabled = true },
       dim = { enabled = true },
       git = { enabled = true },
