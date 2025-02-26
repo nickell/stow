@@ -7,7 +7,7 @@ return {
     opts = {
       animate = { enabled = true, duration = 20 },
       bufdelete = { enabled = true },
-      explorer = { enabled = true },
+      explorer = { enabled = true, replace_netrw = true },
       dashboard = {
         enabled = true,
         preset = {
@@ -15,7 +15,12 @@ return {
             { icon = ' ', key = 'f', desc = 'Find File', action = ':lua Snacks.picker.smart({ cwd = true })' },
             { icon = ' ', key = 'n', desc = 'New File', action = ':ene' },
             { icon = ' ', key = 'g', desc = 'Find Text', action = ':lua Snacks.picker.grep()' },
-            { icon = ' ', key = 'r', desc = 'Recent Files', action = ':lua Snacks.picker.recent({ cwd = true })' },
+            {
+              icon = ' ',
+              key = 'r',
+              desc = 'Recent Files',
+              action = ':lua Snacks.picker.recent({ filter = { paths = { [vim.fn.getcwd()] = true } } })',
+            },
             {
               icon = ' ',
               key = 'c',
@@ -79,16 +84,20 @@ return {
     keys = {
       { '<leader><space>', function() Snacks.picker.smart { cwd = true } end, desc = 'Smart Find Files' },
       { '<leader>fb', function() Snacks.picker.buffers() end, desc = 'Buffers' },
-      { '<leader>/', function() Snacks.picker.grep() end, desc = 'Grep' },
+      { '<leader>/', function() Snacks.picker.grep { hidden = true } end, desc = 'Grep' },
       { '<leader>fw', function() Snacks.picker.grep_word() end, desc = 'Grep' },
       { '<leader>:', function() Snacks.picker.command_history() end, desc = 'Command History' },
       { '<leader>n', function() Snacks.picker.notifications() end, desc = 'Notification History' },
-      { '<leader>e', function() Snacks.explorer() end, desc = 'File Explorer' },
+      { '<c-n>', function() Snacks.explorer { hidden = true } end, desc = 'File Explorer' },
       { '<leader>td', function() Snacks.picker.lsp_definitions() end, desc = 'Goto Definition' },
       { '<leader>sb', function() Snacks.picker.lines() end, desc = 'Buffer Lines' },
       { '<leader>sC', function() Snacks.picker.commands() end, desc = 'Commands' },
-      { '<leader>ff', function() Snacks.picker.files { cwd = true } end, desc = 'Files' },
-      { '<leader>sr', function() Snacks.picker.recent { cwd = true } end, desc = 'Recent' },
+      { '<leader>ff', function() Snacks.picker.files { cwd = true, hidden = true } end, desc = 'Files' },
+      {
+        '<leader>sr',
+        function() Snacks.picker.recent { filter = { paths = { [vim.fn.getcwd()] = true } } } end,
+        desc = 'Recent',
+      },
       {
         '<leader>fr',
         function() Snacks.picker.lsp_references() end,

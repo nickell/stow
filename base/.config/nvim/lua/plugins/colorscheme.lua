@@ -1,9 +1,22 @@
 return {
-  'AlexvZyl/nordic.nvim',
-  lazy = false,
+  'catppuccin/nvim',
+  name = 'catppuccin',
   priority = 1000,
-  config = function() require('nordic').load() end,
+  config = function()
+    require('catppuccin').setup {
+      flavour = 'macchiato',
+    }
+
+    vim.cmd.colorscheme 'catppuccin'
+  end,
 }
+
+-- return {
+--   'AlexvZyl/nordic.nvim',
+--   lazy = false,
+--   priority = 1000,
+--   config = function() require('nordic').load() end,
+-- }
 
 -- return {
 --   'savq/melange-nvim',
