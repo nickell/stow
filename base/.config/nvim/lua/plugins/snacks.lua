@@ -12,9 +12,9 @@ return {
         enabled = true,
         preset = {
           keys = {
-            { icon = ' ', key = 'f', desc = 'Find File', action = ':lua Snacks.picker.smart({ cwd = true })' },
+            { icon = ' ', key = 'f', desc = 'Find File', action = ':lua Snacks.picker.files({ cwd = true })' },
             { icon = ' ', key = 'n', desc = 'New File', action = ':ene' },
-            { icon = ' ', key = 'g', desc = 'Find Text', action = ':lua Snacks.picker.grep()' },
+            { icon = ' ', key = 'g', desc = 'Find Text', action = ':lua Snacks.picker.grep({ cwd = true })' },
             {
               icon = ' ',
               key = 'r',
