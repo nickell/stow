@@ -7,7 +7,7 @@ local function get_file_representation(path)
     return basename
   else
     -- If not, return the first letter of the directory + the basename.
-    local directory = relative_path:match '^([^/]+)/'
+    local directory = vim.fn.fnamemodify(vim.fn.fnamemodify(path, ':h'), ':t')
     if directory == nil or directory == '' then
       return basename
     else
@@ -26,6 +26,7 @@ return {
     bufferline.setup {
       options = {
         separator_style = 'slant',
+        diagnostics = 'nvim_lsp',
         sort_by = function(buffer_a, buffer_b)
           local modified_a = vim.fn.getftime(buffer_a.path)
           local modified_b = vim.fn.getftime(buffer_b.path)
@@ -42,8 +43,8 @@ return {
         end,
         offsets = {
           {
-            filetype = 'NvimTree',
-            text = 'File Explorer',
+            filetype = 'snacks_picker_list',
+            text = 'Explorer',
             highlight = 'Directory',
             separator = true, -- use a "true" to enable the default, or set your own character
           },

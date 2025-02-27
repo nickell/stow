@@ -1,10 +1,10 @@
 return {
   'nvim-neotest/neotest',
   dependencies = {
-    'nvim-treesitter/nvim-treesitter',
-    { 'nvim-neotest/nvim-nio', tag = 'v1.9.0' },
+    'nvim-neotest/nvim-nio',
     'nvim-lua/plenary.nvim',
     'antoinemadec/FixCursorHold.nvim',
+    'nvim-treesitter/nvim-treesitter',
     'marilari88/neotest-vitest',
   },
   config = function()
