@@ -16,10 +16,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup('plugins', { change_detection = {
-  enabled = true,
-  notify = false,
-} })
+require('lazy').setup('plugins', {
+  change_detection = {
+    enabled = true,
+    notify = false,
+  }
+})
 
 local o = vim.opt
 
@@ -81,8 +83,8 @@ local function map(mode, key, command, options)
 end
 
 local function nmap(key, command, options) map('n', key, command, options) end
-
 local function vmap(key, command, options) map('v', key, command, options) end
+local function cmap(key, command, options) map('c', key, command, options) end
 
 nmap('-', 'dd')
 nmap('<A-j>', ':m .+1<CR>')
@@ -122,3 +124,5 @@ vmap('<', '<gv')
 vmap('<A-j>', ":m '>+1<CR>gv=gv")
 vmap('<A-k>', ":m '<-2<CR>gv=gv")
 vmap('>', '>gv')
+
+cmap('w!!', ':w !sudo tee > /dev/null %')
