@@ -20,12 +20,12 @@ require('lazy').setup('plugins', {
   change_detection = {
     enabled = true,
     notify = false,
-  }
+  },
 })
 
 local o = vim.opt
 
-o.autoindent = true
+-- o.autoindent = true
 o.clipboard = 'unnamedplus'
 o.expandtab = true
 o.ignorecase = true
