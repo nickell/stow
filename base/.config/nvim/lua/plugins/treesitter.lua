@@ -15,7 +15,7 @@ return {
             if ok and stats and stats.size > max_filesize then return true end
           end,
         },
-        indent = { enable = true, disable = { 'yaml' } },
+        -- indent = { enable = true, disable = { 'yaml' } },
         ensure_installed = {
           'bash',
           'c',
