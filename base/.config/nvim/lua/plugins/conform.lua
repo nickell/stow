@@ -31,6 +31,9 @@ return {
       shfmt = {
         prepend_args = { '-i', '2' },
       },
+      prettier = {
+        append_args = { '--ignore-path', 'null' },
+      },
     },
   },
   init = function()
