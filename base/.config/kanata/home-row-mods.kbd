@@ -6,10 +6,10 @@
 )
 
 (defsrc
-  q w e r t y u i o p
-  a s d f g h j k l ;
-  z x c v b n m , . /
-         spc
+       q w e r t y u i o p
+  caps a s d f g h j k l ;
+       z x c v b n m , . /
+               spc
 )
 
 (deftemplate charmod (char mod)
@@ -49,6 +49,7 @@
 )
 
 (deflayermap (main)
+  caps esc
   w (chord mtl w)
   e (chord mtl e)
   i (chord mtr i)
