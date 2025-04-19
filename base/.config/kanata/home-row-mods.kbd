@@ -4,8 +4,9 @@
 )
 
 (defsrc
-  a s d f j k l ;
+  a s d f j k l ; spc
 )
+
 (defvar
   tap-time 150
   hold-time 200
@@ -20,10 +21,24 @@
   k (multi f24 (tap-hold $tap-time $hold-time k rsft))
   l (multi f24 (tap-hold $tap-time $hold-time l rmet))
   ; (multi f24 (tap-hold $tap-time $hold-time ; ralt))
+  spc (multi f24 (tap-hold $tap-time $hold-time spc (layer-while-held numbers)))
 )
 
 (deflayer base
-  @a @s @d @f @j @k @l @;
+  @a @s @d @f @j @k @l @; @spc
+)
+
+(deflayermap numbers
+  a 1
+  s 2
+  d 3
+  f 4
+  g 5
+  h 6
+  j 7
+  k 8
+  l 9
+  ; 0
 )
 
 
