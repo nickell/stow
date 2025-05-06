@@ -201,6 +201,7 @@ bindsym $mod+Shift+q split toggle
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+s move container to workspace 
 bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+y sticky toggle
 bindsym $mod+Shift+t move container to workspace 僧
 bindsym $mod+Shift+x move container to workspace 
 bindsym $mod+Shift+z move container to workspace 犯

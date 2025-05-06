@@ -14,14 +14,15 @@ return {
     notify_on_error = false,
     -- Define your formatters
     formatters_by_ft = {
-      lua = { 'stylua' },
-      python = { 'isort', 'black' },
+      graphql = { 'prettier' },
       javascript = { 'prettier' },
       json = { 'prettier' },
       jsonc = { 'prettier' },
-      typescriptreact = { 'prettier' },
-      typescript = { 'prettier' },
+      lua = { 'stylua' },
+      python = { 'isort', 'black' },
       sql = { 'prettier' },
+      typescript = { 'prettier' },
+      typescriptreact = { 'prettier' },
       yaml = { 'yamlfix' },
     },
     -- Set up format-on-save
