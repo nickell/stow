@@ -86,6 +86,19 @@ return {
           end,
         }
       end,
+      ['graphql'] = function()
+        local nvim_lsp = require 'lspconfig'
+
+        lspconfig.graphql.setup {
+          capabilities = capabilities,
+          on_attach = on_attach,
+          root_dir = nvim_lsp.util.root_pattern('.graphqlrc.ts', 'package.json'),
+          filetypes = { 'graphql', 'typescript' },
+          flags = {
+            debounce_text_changes = 150,
+          },
+        }
+      end,
       ['denols'] = function()
         local nvim_lsp = require 'lspconfig'
 
