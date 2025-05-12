@@ -45,10 +45,8 @@
   m = merge
   p = pull
   pu = push
-  ; pod = push origin --delete --no-verify
+  rebase-since-main = !git rebase -i `git merge-base main HEAD`
   reset-to-remote = !git reset --hard origin/`git rev-parse --abbrev-ref HEAD`
-  review = !nvim -p $(git files) +\"tabdo Gvdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
-  reviewone = !nvim -p +\"tabdo Gvdiff $REVIEW_BASE\" +\"let g:gitgutter_diff_base = '$REVIEW_BASE'\"
   s = switch
   save = "!f() { git add -A; git commit -m ${1-SAVEPOINT} --no-verify; }; f"
   stat = !git diff --stat `git merge-base HEAD $REVIEW_BASE`
