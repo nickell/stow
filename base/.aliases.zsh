@@ -1,28 +1,27 @@
 # vim: set ft=sh:
 
-# alias c="clear"
 alias ..="cd ../"
-alias ~="cd ~/"
+alias asl="aws sso login"
 alias ctl="systemctl --user"
+alias d="nvim -c \"cd /home/chad/.dotfiles\""
+alias db="nvim -c DBUI"
 alias e="${(z)VISUAL:-${(z)EDITOR}}"
 alias g="git"
 alias gd="git diff"
 alias gl="git log"
 alias gs="git status"
+alias l="eza --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions -h"
 alias ll="ls -aFhl"
-# alias l="ls"
 alias m="make"
 alias nr="npm run"
+alias o="nvim -c \"cd /home/chad/Documents/notes/Notes\""
 alias r=". ranger"
 alias sctl="sudo systemctl"
 alias se="sudoedit"
 alias ssh='TERM=xterm-256color ssh'
 alias ya="yadm"
 alias z="__zoxide_zi"
-alias l="eza --color=always --long --no-filesize --icons=always --no-time --no-user --no-permissions -h"
-alias o="nvim -c \"cd /home/chad/Documents/notes/Notes\""
-alias d="nvim -c \"cd /home/chad/.dotfiles\""
-alias db="nvim -c DBUI"
+alias ~="cd ~/"
 
 # Functions
 logs () {
