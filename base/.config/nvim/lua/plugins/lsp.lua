@@ -36,10 +36,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
         callback = function()
           if client.name == 'ts_ls' then
             ---@diagnostic disable-next-line: missing-fields, assign-type-mismatch
-            vim.lsp.buf.code_action { context = { only = { 'source.organizeImports.ts' } }, apply = true }
+            -- vim.lsp.buf.code_action { context = { only = { 'source.organizeImports.ts' } }, apply = true }
           end
           vim.lsp.buf.format {
-            filter = function(c) return c.name ~= "ts_ls" end,
+            filter = function(c) return c.name ~= "ts_ls" and c.name ~= 'eslint' end,
             bufnr = args.buf,
             id = client.id,
             timeout_ms = 1000,
