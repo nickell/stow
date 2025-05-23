@@ -1,9 +1,7 @@
 vim.g.mapleader = ' '
 
--- Useful for debugging
--- print(vim.inspect(variable))
-
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+---@diagnostic disable-next-line: undefined-field
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
     'git',
@@ -60,25 +58,11 @@ o.undodir = vim.fn.expand '~/.config/nvim/undo/'
 
 o.conceallevel = 2
 
--- Make DiffView look cool
 o.fillchars:append { diff = '╱' }
--- o.fillchars = {
---   fold = ' ',
---   diff = '╱',
---   wbr = '─',
---   msgsep = '─',
---   horiz = ' ',
---   horizup = '│',
---   horizdown = '│',
---   vertright = '│',
---   vertleft = '│',
---   verthoriz = '│',
--- }
-
-local opts = { noremap = true, silent = true }
 
 local function map(mode, key, command, options)
-  options = options or opts
+  if options == nil then options = {} end
+  options = vim.tbl_extend('error', options, { noremap = true, silent = true })
   vim.keymap.set(mode, key, command, options)
 end
 
@@ -96,27 +80,18 @@ nmap('<C-l>', '<CMD>NavigatorRight<CR>')
 nmap('<CR>', 'i<CR><ESC>')
 nmap('<Leader><CR>', ':noh<CR>')
 nmap('<Leader>bo', ':%bd|e#|bd#<CR>')
--- nmap('<Leader>e', vim.diagnostic.open_float)
-nmap('<Leader>j', vim.diagnostic.goto_next)
-nmap('<Leader>k', vim.diagnostic.goto_prev)
+nmap('<Leader>j', function() vim.diagnostic.jump { count = 1, float = true } end)
+nmap('<Leader>k', function() vim.diagnostic.jump { count = -1, float = true } end)
 nmap('<Leader>q', vim.diagnostic.setloclist)
--- nmap('<Leader>s', function() require('luasnip.loaders').edit_snippet_files() end)
--- nmap('<leader>sv', '<C-w>v', { desc = 'Split window vertically' }) -- split window vertically
--- nmap('<leader>sh', '<C-w>s', { desc = 'Split window horizontally' }) -- split window horizontally
--- nmap('<leader>se', '<C-w>=', { desc = 'Make splits equal size' }) -- make split windows equal width & height
--- nmap('<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' }) -- close current split window
 nmap('<Leader>w', ':write<CR>')
 nmap('<Leader>x', ':bd<CR>')
 nmap('<Leader>X', "<cmd>call delete(expand('%')) | bdelete!<CR>")
--- nmap('<leader><leader>s', '<cmd>source ~/.config/nvim/lua/my_luasnip.lua<CR>')
 nmap('L', 'zO')
 nmap('H', 'zC')
 nmap('zL', 'L')
 nmap('zH', 'H')
 nmap('QQ', ':quit<CR>')
 nmap('X', ':bd<CR>')
--- nmap('gd', ':bd<CR>')
--- nmap('gd', '<Plug>Kwbd')
 nmap('gn', '<cmd>BufferLineCycleNext<CR>')
 nmap('gp', '<cmd>BufferLineCyclePrev<CR>')
 

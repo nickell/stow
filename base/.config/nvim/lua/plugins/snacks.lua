@@ -64,16 +64,11 @@ return {
         -- what buffers to animate
         filter = function(buf)
           return vim.g.snacks_scroll ~= false
-            and vim.b[buf].snacks_scroll ~= false
-            and vim.bo[buf].buftype ~= 'terminal'
+              and vim.b[buf].snacks_scroll ~= false
+              and vim.bo[buf].buftype ~= 'terminal'
         end,
       },
       statuscolumn = { enabled = true },
-      styles = {
-        notification = {
-          -- wo = { wrap = true } -- Wrap notifications
-        },
-      },
       terminal = { enabled = true },
       toggle = { enabled = true },
       util = { enabled = true },
@@ -84,23 +79,35 @@ return {
     keys = {
       {
         '<leader><space>',
-        function() Snacks.picker.smart { cwd = true } end,
+        function() Snacks.picker.smart { cwd = vim.fn.getcwd() } end,
         desc = 'Smart Find Files',
       },
-      { '<leader>fb', function() Snacks.picker.buffers() end, desc = 'Buffers' },
-      { '<leader>/', function() Snacks.picker.grep { hidden = true } end, desc = 'Grep' },
-      { '<leader>fw', function() Snacks.picker.grep_word() end, desc = 'Grep' },
-      { '<leader>:', function() Snacks.picker.command_history() end, desc = 'Command History' },
+      { '<leader>fb', function() Snacks.picker.buffers() end,              desc = 'Buffers' },
+      { '<leader>/',  function() Snacks.picker.grep { hidden = true } end, desc = 'Grep' },
+      { '<leader>fw', function() Snacks.picker.grep_word() end,            desc = 'Grep' },
+      { '<leader>:',  function() Snacks.picker.command_history() end,      desc = 'Command History' },
       {
         '<leader>n',
         function() Snacks.picker.notifications() end,
         desc = 'Notification History',
       },
-      { '<c-n>', function() Snacks.explorer { hidden = true } end, desc = 'File Explorer' },
-      { '<leader>td', function() Snacks.picker.lsp_definitions() end, desc = 'Goto Definition' },
-      { '<leader>sb', function() Snacks.picker.lines() end, desc = 'Buffer Lines' },
-      { '<leader>sC', function() Snacks.picker.commands() end, desc = 'Commands' },
-      { '<leader>ff', function() Snacks.picker.files { cwd = true, hidden = true } end, desc = 'Files' },
+      {
+        '<c-n>',
+        function() Snacks.explorer { hidden = true } end,
+        desc = 'File Explorer',
+      },
+      {
+        '<leader>td',
+        function() Snacks.picker.lsp_definitions() end,
+        desc = 'Goto Definition',
+      },
+      {
+        '<leader>sb',
+        function() Snacks.picker.lines() end,
+        desc = 'Buffer Lines',
+      },
+      { '<leader>sC', function() Snacks.picker.commands() end,                                     desc = 'Commands' },
+      { '<leader>ff', function() Snacks.picker.files { cwd = vim.fn.getcwd(), hidden = true } end, desc = 'Files' },
       {
         '<leader>sr',
         function() Snacks.picker.recent { filter = { paths = { [vim.fn.getcwd()] = true } } } end,
@@ -112,11 +119,11 @@ return {
         nowait = true,
         desc = 'References',
       },
-      { '<leader>z', function() Snacks.zen() end, desc = 'Toggle Zen Mode' },
-      { '<leader>Z', function() Snacks.zen.zoom() end, desc = 'Toggle Zoom' },
-      { '<leader>.', function() Snacks.scratch() end, desc = 'Toggle Scratch Buffer' },
-      { '<leader>S', function() Snacks.scratch.select() end, desc = 'Select Scratch Buffer' },
-      { 'gd', function() Snacks.bufdelete() end, desc = 'Delete Buffer' },
+      { '<leader>z',  function() Snacks.zen() end,                desc = 'Toggle Zen Mode' },
+      { '<leader>Z',  function() Snacks.zen.zoom() end,           desc = 'Toggle Zoom' },
+      { '<leader>.',  function() Snacks.scratch() end,            desc = 'Toggle Scratch Buffer' },
+      { '<leader>S',  function() Snacks.scratch.select() end,     desc = 'Select Scratch Buffer' },
+      { 'gd',         function() Snacks.bufdelete() end,          desc = 'Delete Buffer' },
       { '<leader>cR', function() Snacks.rename.rename_file() end, desc = 'Rename File' },
       {
         '<leader>gB',
@@ -124,13 +131,13 @@ return {
         desc = 'Git Browse',
         mode = { 'n', 'v' },
       },
-      { '<leader>gb', function() Snacks.git.blame_line() end, desc = 'Git Blame Line' },
+      { '<leader>gb', function() Snacks.git.blame_line() end,   desc = 'Git Blame Line' },
       { '<leader>gf', function() Snacks.lazygit.log_file() end, desc = 'Lazygit Current File History' },
-      { '<leader>gg', function() Snacks.lazygit() end, desc = 'Lazygit' },
-      { '<leader>gl', function() Snacks.lazygit.log() end, desc = 'Lazygit Log (cwd)' },
-      { '<leader>un', function() Snacks.notifier.hide() end, desc = 'Dismiss All Notifications' },
-      { '<c-/>', function() Snacks.terminal() end, desc = 'Toggle Terminal' },
-      { '<c-_>', function() Snacks.terminal() end, desc = 'which_key_ignore' },
+      { '<leader>gg', function() Snacks.lazygit() end,          desc = 'Lazygit' },
+      { '<leader>gl', function() Snacks.lazygit.log() end,      desc = 'Lazygit Log (cwd)' },
+      { '<leader>un', function() Snacks.notifier.hide() end,    desc = 'Dismiss All Notifications' },
+      { '<c-/>',      function() Snacks.terminal() end,         desc = 'Toggle Terminal' },
+      { '<c-_>',      function() Snacks.terminal() end,         desc = 'which_key_ignore' },
       {
         ']]',
         function() Snacks.words.jump(vim.v.count1) end,
