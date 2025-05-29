@@ -18,7 +18,7 @@ return {
       javascript = { 'prettier' },
       json = { 'prettier' },
       jsonc = { 'prettier' },
-      -- lua = { 'stylua' },
+      lua = { 'stylua' },
       python = { 'isort', 'black' },
       sql = { 'prettier' },
       typescript = { 'prettier' },

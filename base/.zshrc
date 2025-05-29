@@ -66,7 +66,7 @@ alias c='clear'
 eval "$(fzf --zsh)"
 
 export _ZO_FZF_OPTS="--select-1"
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 #  }}}
 
 export EDITOR=/usr/bin/nvim
