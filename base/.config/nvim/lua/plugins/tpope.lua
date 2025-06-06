@@ -1,15 +1,15 @@
 return {
-  {
-    'tpope/vim-unimpaired',
-    config = function()
-      vim.cmd [[
-    unmap =s
-    unmap =s<Esc>
-    unmap =p
-    unmap =P
-    ]]
-    end,
-  },
+  -- {
+  --   'tpope/vim-unimpaired',
+  --   config = function()
+  --     vim.cmd [[
+  --   unmap =s
+  --   unmap =s<Esc>
+  --   unmap =p
+  --   unmap =P
+  --   ]]
+  --   end,
+  -- },
   'tpope/vim-sensible',
   'tpope/vim-abolish',
   {
