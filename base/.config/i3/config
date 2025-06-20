@@ -269,7 +269,7 @@ set $launch_app_mode Launch app: (s)lack | (1)password | (e)mail | (x)db launch 
 mode "$launch_app_mode" {
         bindsym n exec google-chrome-stable --app="https://linear.app/get-robin/view/c58cfa9a-3d94-4368-8262-fa41f71d4ea5"; mode "default"
         bindsym s exec /usr/bin/slack; mode "default"
-        bindsym 1 exec /usr/bin/1password; mode "default"
+        bindsym 1 exec /usr/bin/bitwarden-desktop; mode "default"
         bindsym e mode $email_launch_mode
         bindsym x mode $db_launch_mode
 

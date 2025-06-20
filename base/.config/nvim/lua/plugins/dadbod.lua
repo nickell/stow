@@ -1,7 +1,7 @@
 return {
   'kristijanhusak/vim-dadbod-ui',
   dependencies = {
-    { 'tpope/vim-dadbod', lazy = true },
+    { 'tpope/vim-dadbod',                     lazy = true },
     { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
   },
   cmd = {
@@ -22,11 +22,11 @@ return {
     }
 
     vim.g.db_ui_hide_schemas =
-      { 'pg_catalog', 'pg_toast_temp.*', 'crdb_internal', 'information_schema', 'pg_extension' }
+    { 'pg_catalog', 'pg_toast_temp.*', 'crdb_internal', 'information_schema', 'pg_extension' }
 
     vim.g.db_ui_execute_on_save = 0
 
-    vim.g.db_ui_save_location = '/home/chad/Documents/Drive - Personal/Syncs/DBUI'
+    vim.g.db_ui_save_location = '/home/chad/Documents/Drive - Personal/Drive/Syncs/DBUI'
   end,
   config = function()
     -- require('vim-dadbod-ui').setup()
