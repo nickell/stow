@@ -85,6 +85,7 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="Galculator"] floating enable border pixel 1 mark "galculator" move scratchpad
+for_window [class="Bitwarden"] floating enable mark "bitwarden" move scratchpad
 for_window [class="GParted"] floating enable border normal
 for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-settings"] floating enable
@@ -161,6 +162,7 @@ bindsym $mod+i exec --no-startup-id rofi -modi "clipboard:greenclip print" -show
 bindsym $mod+e workspace 
 bindsym $mod+f fullscreen toggle
 bindsym $mod+g [con_mark="galculator"] scratchpad show
+bindsym $mod+w [con_mark="bitwarden"] scratchpad show
 bindsym $mod+Shift+c append_layout ~/.config/i3/codespace.json
 bindsym $mod+v layout toggle splitv tabbed
 bindsym $mod+Shift+v layout stacking
