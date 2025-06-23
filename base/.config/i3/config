@@ -459,7 +459,7 @@ exec --no-startup-id /usr/bin/picom -b
 exec --no-startup-id kitty --title="Scratchpad"
 exec --no-startup-id kitty --title="Ranger" ranger
 exec --no-startup-id /usr/bin/obsidian
-exec --no-startup-id /usr/bin/insync start
+# exec --no-startup-id /usr/bin/insync start
 exec --no-startup-id /usr/bin/dolphin
 # }}}
 
